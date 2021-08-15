@@ -3,7 +3,8 @@
 """
 Created on Tue Mar 23 11:39:05 2021
 
-@author: mso257
+@author: @author: Rahim_Soleymanpour
+
 """
 import numpy as np
 import random
