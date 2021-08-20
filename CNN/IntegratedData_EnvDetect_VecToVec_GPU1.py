@@ -71,20 +71,22 @@ TrainNoisyDataEnvLPF1 = TrainNoisyDataEnvLPF1.reshape(len(TrainNoisyDataEnvLPF1)
 # CNN Model
 
 model = Sequential()
-model.add(Conv1D(filters=32,strides=1, kernel_size=3, activation='relu',padding='same'))
+model.add(Conv1D(filters=16,strides=1, kernel_size=3, activation='relu',padding='same'))
 model.add(MaxPooling1D(pool_size=2,padding='same'))
 model.add(Dropout(0.2))
 
-model.add(Conv1D(filters=64, strides=1, kernel_size=3, activation='relu',  padding="same"))
+model.add(Conv1D(filters=32, strides=1, kernel_size=3, activation='relu',  padding="same"))
 model.add(MaxPooling1D(pool_size=2,padding="same"))
 model.add(Dropout(0.2))
 
-model.add(Conv1D(filters=128, strides=1, kernel_size=3, activation='relu', padding="same"))
+model.add(Conv1D(filters=64, strides=1, kernel_size=3, activation='relu', padding="same"))
 model.add(MaxPooling1D(pool_size=2,padding="same"))
 model.add(Dropout(0.2))
 
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
+model.add(Dense(16, activation='relu'))
+
 model.add(Dense(n_features))
 opt = optimizers.Adam(lr=0.0001)
 
